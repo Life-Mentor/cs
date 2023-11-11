@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 注册 </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
+		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
+	</head>
+	<body>
+		<h1 align='center'> 注册 </h1>
+		<h2 align='center'>{{ code }}</h2>
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+				<br/>
+				<br/>
+				<br/>
+			<div style="text-align:center;vertical-align:middle;">
+				默认头像是这个:<img src='{% static 'imga/default.jpg'%}' width='60'>
+				<br/>
+				<br/>
+				上传头像:{{ form.icon }}
+				<br/>
+				<br/>
+				用户名: {{ form.username }}
+				<br/>
+				<br/>
+				邮&emsp;箱:{{ form.email }}
+				<br/>
+				<br/>
+				密&emsp;码:{{ form.password }}
+				<br/>
+				<br/>
+				&emsp;&emsp;&emsp; {{ form.user_info }}
+			</div>
+			<div style="text-align:center">
+				<div class="control">
+					<button class="button is-primary">提交</button><br/>
+					<label class="checkbox">
+						<input type="checkbox">
+						我同意<a href="#">《初識网络安全管理》</a>协议
+					</label>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
