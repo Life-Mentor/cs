@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Index </title>
+		<title> 注册 </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
+		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
 	</head>
 	<body>
 		<h1> hello world </h1>
+		<a href="{% url 'secondary:home'%}">home</a>
 	</body>
 </html>

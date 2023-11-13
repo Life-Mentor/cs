@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 登录 </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
+		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
+	</head>
+	<body>
+		<h1 align='center'>登录</h1>
+		<h2 align='center'>{{ code }}</h2>
+				<br/>
+				<br/>
+		<form method="post">
+			{% csrf_token %}
+			<div style="text-align:center;vertical-align:middle;">
+				用户名:{{ form.username }}
+				<br/>
+				<br/>
+				密&emsp;码:{{ form.password }}
+			</div>
+				<br/>
+			<div style="text-align:center">
+				<div class="control">
+					<a class="is-light button is-primary" href='{% url 'secondary:reirster' %}' width=10> 注册账号 </a>&emsp;&emsp;
+					<button class="button is-primary">提交</button><br/>
+				</div>
+			</div>
+		<form>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 用户中心 </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
+		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
+		<link rel='stylesheet' href="{% static 'spectre/dist/spectre-exp.css' %}">
+	</head>
+	<body>
+		<br/>
+		<div align='center'>
+			<img src='{{ MEDIA_URL}}{{ user.icon }}'width="200">
+			<hr width=600 style='background-color:blue;height:1px;border:none;'>
+		</div>
+		<table border="1" cellspacing="0" cellpadding="10" width="500" height="95" align="center">
+			<tr align="letf">
+				<td> 个人简介:{{ user.user_info }} </td>
+				<td> <a href='#'>修改个人简介</a>
+			</tr>
+			<tr align="letf">
+				<td>邮箱地址:{{ user.email }}</td>
+				<td> <a href='#'>修改邮箱地址</a>
+			</tr>
+			<tr align="letf">
+				<td> 个性签名:{{ user.gexing }} </td>
+				<td> <a href='#'>修改个性签名</a>
+			</tr>	
+		</table>
+		<div>
+		<ul class="layui-fixbar">
+		<li>
+			<a href="http://www.tp5.com/index/index/index" type="button"  data-toggle="tooltip" data-placement="top" title="返回首页">
+				<i class="layui-icon" style="font-size: 28px">&#xe68e;</i>
+			</a>
+		</li>
+		<li>
+			<a   οnclick="play()";>
+				<i  id="ic" class="layui-icon" style="font-size: 28px">&#xe652;</i>
+			</a>
+		</li>
+		<li>
+			<a  data-toggle="tooltip" data-placement="top" title="与我交流"  href="tencent://message/?uin=602060558&Site=http://vps.shuidazhe.com&Menu=yes">
+			<i  class="layui-icon" style="font-size: 28px">&#xe63a;</i>
+		    </a>
+		</li>
+		<li>
+			<a type="button"  data-toggle="modal" data-target=".bs-example-modal-sm">
+		    <i class="layui-icon" style="font-size: 28px">&#xe611;</i>
+		    </a> 
+		</li>
+		<ul>
+	</body>
+</html>
