@@ -1,5 +1,4 @@
 import traceback
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render, HttpResponse
 from django.urls import reverse
 from django.views import View
@@ -7,10 +6,8 @@ import uuid, os
 from django.db.models import Q
 from django.contrib.auth.models import User
 from django.contrib.auth.backends import ModelBackend
-from django.contrib.auth import authenticate, logout
-from django.contrib import auth
 from .forms import Reirster, Login
-from .models import UserInfo, EmailVerifyRecord, User_Info
+from .models import EmailVerifyRecord, User_Info
 from utils.send_email import send_register_email
 from cs import settings
 
@@ -34,10 +31,11 @@ class reirster(View):
         form = Reirster(request.POST, request.FILES)
         if form.is_valid():
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+            pwd = form.cleaned_data['password']
             email = form.cleaned_data['email']
             user_info = form.cleaned_data['user_info']
             img = form.cleaned_data['icon']
+
             file_name = gen_uuid() + img.name[img.name.rfind('.'):]
             file_path = os.path.join(settings.MEDIA_ROOT+"uploads/",file_name)
             print(file_path)
@@ -45,9 +43,10 @@ class reirster(View):
                 for part in img.chunks():
                     fp.write(part)
                     fp.flush()
+
             user = User_Info()
             user.name = username
-            user.password = password
+            user.password =pwd
             user.email = email
             user.user_info = user_info
             user.icon = 'uploads/'+file_name
@@ -76,15 +75,18 @@ class login(View):
         return render(request,'users/login.html',{'form':form,'code':code})
 
 def active_user(request,active_code):
-    all_records = EmailVerifyRecord.objects.filter(code = active_code)
-    if all_records:
+    try:
+        all_records = EmailVerifyRecord.objects.filter(code = active_code)
+    except:
+        return HttpResponse('404')
+    if all_records.exists():
         for recod in all_records:
             email = recod.email
-            user = User.objects.get(email=email)
+            user = User_Info.objects.get(email=email)
             user.is_staff = True
             user.save()
     else:
-        return HttpRequest('链接有误')
+        return HttpResponse('请确认链接是否正确，以及注册是否成功')
     return redirect('secondary:login')
 
 def home(request):
@@ -94,3 +96,4 @@ def home(request):
         return render(request,'users/home.html',{'user':user})
     else:
         return HttpResponse('你可能没有登录')
+

@@ -10,7 +10,7 @@ class UserInfo(models.Model):
     name = models.CharField('昵称',max_length=32)
     user_info = models.CharField('个人简介', max_length=100, blank=True, default='')
     gexing = models.CharField('个性签名', max_length=100, blank=True, default='')
-    gender = models.CharField('性别', max_length=6, choices=USER_GENDER_TYPE, default='male')
+    gender = models.CharField('性别', max_length=6, choices=USER_GENDER_TYPE, default='baomi')
     icon = models.CharField('用户头像',max_length=255)
 
     class Meta:

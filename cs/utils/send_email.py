@@ -19,7 +19,7 @@ def send_register_email(email,send_type='register'):
     if send_type == 'register':
         email_title = 'blog 激活邮件'
         email_body = '点击下面链接激活账号，http://127.0.0.1:8000/users/active/{0}'.format(code)
-        send_status = send_mail(email_title, email_body, '959735909@qq.com',[email],fail_silently=False)
+        send_status = send_mail(email_title, email_body, '959735909@qq.com',[email])
 
         if send_status:
             pass
@@ -27,7 +27,7 @@ def send_register_email(email,send_type='register'):
     elif send_type == 'forget':
         email_title = '找回密码连接'
         email_body = '点击下面链接找回账号，http://127.0.0.1:8000/users/reset/{0}'.format(code)
-        send_status = send_mail(email_title, email_body, '959735909@qq.com',[email],fail_silently=False)
+        send_status = send_mail(email_title, email_body, '959735909@qq.com',[email])
 
         if send_status:
             pass

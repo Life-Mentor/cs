@@ -8,7 +8,25 @@
 		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
 	</head>
 	<body>
-		<h1> hello world </h1>
-		<a href="{% url 'secondary:home'%}">home</a>
+		<nav class="breadcrumb" aria-label="breadcrumbs">
+			<ul>
+				<li><a href="#">Bulma</a></li>
+				<li><a href='#'><i class="fas fa-brands fa-github"></i>&ensp;Github</a></li>
+			</ul>
+		</nav>
+		<div align='center'>
+			<figure class="image is-128x128">
+				<img class="is-rounded" src='{% static 'imga/default.jpg' %}' alt='defluat' width=224>
+			</figure>
+			<h1 style=" font-size:30px"> 初識网络安全组织首页 </h1>
+		</div>
+		<br/>
+		<div class="container">
+			<div class="notification box">
+				<a class='button is-primary' href="{% url 'secondary:home'%}">home</a>
+				<a class='button is-primary' href='{% url 'main:me' %}'> 关于我们 </a>
+				<a href='#' class='is-primary button'><span class='icon'> <i class="fas fa-brands fa-github"></i> </span></a>
+			</div>
+		</div>
 	</body>
 </html>
