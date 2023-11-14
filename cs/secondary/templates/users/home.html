@@ -12,44 +12,42 @@
 		<br/>
 		<div align='center'>
 			<img src='{{ MEDIA_URL}}{{ user.icon }}'width="200">
-			<hr width=600 style='background-color:blue;height:1px;border:none;'>
 		</div>
-		<table border="1" cellspacing="0" cellpadding="10" width="500" height="95" align="center">
-			<tr align="letf">
-				<td> 个人简介:{{ user.user_info }} </td>
-				<td> <a href='#'>修改个人简介</a>
-			</tr>
-			<tr align="letf">
-				<td>邮箱地址:{{ user.email }}</td>
-				<td> <a href='#'>修改邮箱地址</a>
-			</tr>
-			<tr align="letf">
-				<td> 个性签名:{{ user.gexing }} </td>
-				<td> <a href='#'>修改个性签名</a>
-			</tr>	
-		</table>
-		<div>
-		<ul class="layui-fixbar">
-		<li>
-			<a href="http://www.tp5.com/index/index/index" type="button"  data-toggle="tooltip" data-placement="top" title="返回首页">
-				<i class="layui-icon" style="font-size: 28px">&#xe68e;</i>
-			</a>
-		</li>
-		<li>
-			<a   οnclick="play()";>
-				<i  id="ic" class="layui-icon" style="font-size: 28px">&#xe652;</i>
-			</a>
-		</li>
-		<li>
-			<a  data-toggle="tooltip" data-placement="top" title="与我交流"  href="tencent://message/?uin=602060558&Site=http://vps.shuidazhe.com&Menu=yes">
-			<i  class="layui-icon" style="font-size: 28px">&#xe63a;</i>
-		    </a>
-		</li>
-		<li>
-			<a type="button"  data-toggle="modal" data-target=".bs-example-modal-sm">
-		    <i class="layui-icon" style="font-size: 28px">&#xe611;</i>
-		    </a> 
-		</li>
-		<ul>
+		<div class="tile is-ancestor">
+			<div class="tile is-parent">
+				<article class="tile is-child box">
+					<a href='#' class='tile'> 我的文章 </a>
+					<a href='#' class='tile'> 最新评论 </a>
+					<a href='#' class='tile'> ....... </a>
+				</article>
+			</div>
+			<div class="tile is-parent">
+				<article class="tile is-child">
+					<hr width=600 style='background-color:blue;height:1px;border:none;'>
+					<article class="tile is-child box">
+						<div class='tile'>
+							用户名称:{{ user.name }}
+						</div>
+						<div class="tile">
+							个人简介:{{ user.user_info }}
+						</div>
+						<div class="tile">
+							邮箱地址:{{ user.email }}
+						</div>
+						<div class="tile">
+							个性签名:{{ user.gexing }}
+						</div>
+					</article>
+				</article>
+			</div>
+			<div class="tile is-parent">
+				<article class="tile is-child box">
+					<p class="title">CPU使用率</p>
+					<p class="subtitle">With some content</p>
+					<div class="content">
+					</div>
+				</article>
+			</div>
+		</div>
 	</body>
 </html>
