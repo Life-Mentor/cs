@@ -16,5 +16,4 @@ class index(View):
 
 class me(View):
     def get(self,requests):
-        a = '🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔🐔'
-        return render(requests,'index/me.html',{'a':a})
+        return render(requests,'index/me.html')
