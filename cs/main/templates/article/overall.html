@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 全部文章 </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
+		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
+	</head>
+	<body>
+		{% for post in post_list%}
+			<div class="columns box">
+				<div class="box column">
+					{{ post.title }}
+				</div>
+				<div class="box column">
+					{{ post.desc }}
+				</div>
+				<div class="box column">
+					{{ post.catgory }}
+				</div>
+				<div class="box column">
+					{{ post.content }}
+				</div>
+				<div class="box column">
+					{{ post.tags.name }}
+				</div>
+				<div class="box column">
+					{{ post.owner.name }}
+				</div>
+				<div class="box column">
+					{{ post.add_data }}
+				</div>
+				<div class="box column">
+					{{ post.pub_data }}
+				</div>
+			</div>
+		{% endfor %}
+			<br/>
+			<br/>
+		{% for catgory in catgorys %}
+		{{ catgory }}
+		{% endfor %}
+	</body>
+</html>
