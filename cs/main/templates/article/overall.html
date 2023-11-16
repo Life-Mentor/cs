@@ -11,9 +11,9 @@
 		<br/>
 		{% for post in post_list%}
 			<div class="tile is-ancestor" align='center'>
-				<div class="tile is-5 is-vertical is-parent">
+				<div class="tile is-5 is-vertical is-parent" align='center'>
 					<div class="tile is-child box">
-						<p class='title'>{{ post.title }}</p>
+						<a href='{% url 'main:detailed' post.id %}' class='title'>{{ post.title }}</a>
 						<p>作者:{{ post.owner.name }}</p>
 						<p>{{ post.desc|truncatechars:15 }}</p>
 					</div>

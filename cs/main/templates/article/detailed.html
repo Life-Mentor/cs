@@ -1,0 +1,17 @@
+{% extends 'article/template.html' %}
+{% load static %}
+{% block head%}
+{% for post in post_list %}
+	<title> {{ post.title }} </title>
+{% endfor %}
+{% endblock head%}
+{% block content %}
+{% for post in post_list %}
+<div align='center'>
+	<h1 style=" font-size:30px" align='center'> {{ post.title }} </h1>
+	<p>作者:{{ post.owner.name }}</p>
+	{{ post.desc }}
+{% endfor %}
+</div>
+
+{% endblock content %}
