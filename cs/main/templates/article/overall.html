@@ -8,38 +8,18 @@
 		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
 	</head>
 	<body>
+		<br/>
 		{% for post in post_list%}
-			<div class="columns box">
-				<div class="box column">
-					{{ post.title }}
-				</div>
-				<div class="box column">
-					{{ post.desc }}
-				</div>
-				<div class="box column">
-					{{ post.catgory }}
-				</div>
-				<div class="box column">
-					{{ post.content }}
-				</div>
-				<div class="box column">
-					{{ post.tags.name }}
-				</div>
-				<div class="box column">
-					{{ post.owner.name }}
-				</div>
-				<div class="box column">
-					{{ post.add_data }}
-				</div>
-				<div class="box column">
-					{{ post.pub_data }}
+			<div class="tile is-ancestor" align='center'>
+				<div class="tile is-5 is-vertical is-parent">
+					<div class="tile is-child box">
+						<p class='title'>{{ post.title }}</p>
+						<p>作者:{{ post.owner.name }}</p>
+						<p>{{ post.desc|truncatechars:15 }}</p>
+					</div>
 				</div>
 			</div>
 		{% endfor %}
-			<br/>
-			<br/>
-		{% for catgory in catgorys %}
-		{{ catgory }}
-		{% endfor %}
+		<p> 作者不想挡住她请各位忍耐一下 </p>
 	</body>
 </html>

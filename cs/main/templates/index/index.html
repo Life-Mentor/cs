@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title> 注册 </title>
+	<head> 
 		{% load static %}
+		<link rel="shortcut icon" href="{% static 'imga/favicon.ico' %}" type="image/x-icon" />
+		<title> 首页 </title>
 		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
 		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
 		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
@@ -23,7 +24,9 @@
 		<br/>
 		<div class="container">
 			<div class="notification box is-fluid">
-				<a class='button is-primary' href="{% url 'secondary:home'%}">home</a>
+				<a class='button is-primary' href="{% url 'secondary:home'%}">个人主页</a>
+				<a class='button is-primary' href="{% url 'secondary:login'%}"> 登录 </a>
+				<a class='button is-primary' href="{% url 'secondary:reirster'%}"> 注册 </a>
 				<audio loop='loop' autoplay="autoplay" src='{% static 'audio/三葉.mp3' %}'type="audio/mp3" controls="controls"> 三叶 </audio>
 				<a class='button is-primary is-pulled-right' href='{% url 'main:me' %}'> 关于我们 </a>
 			</div>
