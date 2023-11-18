@@ -9,7 +9,6 @@ from utils.send_email import send_register_email
 from cs import settings
 from .models import Catgory, Post
 
-
 class index(View):
     def get(self,requests):
         return render(requests,'index/index.html')
@@ -36,8 +35,8 @@ class check(View):
         else:
             return render(requests,'article/detailed.html',{'post_list':post_list})
         
-
-def ce(requests):
-    form = Add_questionsForm()
-    print(form)
-    return render(requests,'article/ce.html',{'form':form})
+class SubmitBug(View):
+    def get(self,requests):
+        return render(requests,'bug/SubmitBug.html')
+    def post(self,requests):
+        return render(requests,'bug/SubmitBug.html')

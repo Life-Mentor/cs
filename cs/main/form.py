@@ -1,2 +1,4 @@
 from django import forms
-from ckeditor.fields import *
+
+class SubmitBug(forms.Form):
+    name = forms.CharField()

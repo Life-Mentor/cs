@@ -35,3 +35,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class SubmitBug(models.Model):
+    username = models.ForeignKey(m.User_Info,on_delete=models.CASCADE,verbose_name='用户名字')
+    Bug_name = models.CharField(max_length=56,verbose_name='bug名字')
+    Bug_desc = models.CharField(max_length=256,verbose_name='bug描述')
