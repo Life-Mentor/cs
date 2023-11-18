@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'secondary.apps.SecondaryConfig',
     'ckeditor',
+    'ckeditor_uploader',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,11 +62,18 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR,"static")
-# STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"),]
+
+"""
+STATIC_ROOT = os.path.join(BASE_DIR,"/static/")
+CKEDITOR_BASEPATH = STATIC_ROOT,'ckeditor'
+"""
+
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"),]
+CKEDITOR_BASEPATH = STATICFILES_DIRS[0],'ckeditor'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.qq.com'   # 用于发送电子邮件的主机。
@@ -73,3 +81,12 @@ EMAIL_HOST_USER = "959735909@qq.com"    # 自己的邮箱地址
 EMAIL_HOST_PASSWORD = "ryrekrdqvxezbege"       # 自己的邮箱密码
 EMAIL_PORT = 25
 EMAIL_USE_SSL = True
+
+CKEDITOR_CONFIGS = {
+    'default':{
+        'toolbar':'full', # 完整工具条
+        'height': 300, # 编辑高度
+        # 'woidth': 300, # 编辑宽度
+    },
+}
+

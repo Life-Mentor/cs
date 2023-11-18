@@ -1,5 +1,6 @@
 from django.db import models
 from secondary import models as m
+from ckeditor.fields import RichTextField
 
 class Catgory(models.Model):
     name = models.CharField(max_length=32, verbose_name='分类名称')

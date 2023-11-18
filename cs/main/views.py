@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render, HttpResponse
 from django.urls import reverse
 from django.views import View
 from django.contrib.auth.backends import ModelBackend
+from django.core.paginator import Paginator
 
 from utils.send_email import send_register_email
 from cs import settings
@@ -21,7 +22,10 @@ class overall(View):
     def get(self,requests):
         catgorys = Catgory.objects.all()
         post_list = Post.objects.all()
-        return render(requests,'article/overall.html',{'catgorys':catgorys,'post_list':post_list})
+        paginator = Paginator(post_list, 10)
+        page_number = requests.GET.get("page")
+        page_obj = paginator.get_page(page_number)
+        return render(requests,'article/overall.html',{'catgorys':catgorys,'post_list':post_list,"page_obj": page_obj})
 
 class check(View):
     def get(self,requests,detailed_id):
@@ -32,3 +36,8 @@ class check(View):
         else:
             return render(requests,'article/detailed.html',{'post_list':post_list})
         
+
+def ce(requests):
+    form = Add_questionsForm()
+    print(form)
+    return render(requests,'article/ce.html',{'form':form})
