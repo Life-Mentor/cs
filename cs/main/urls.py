@@ -7,5 +7,5 @@ urlpatterns = [
     path('article/',overall.as_view(),name='article'),
     path('detailed/<int:detailed_id>',check.as_view(),name='detailed'),
     path('submitbug/',SubmitBug.as_view(),name='submitbug'),
+    path('author/',author.as_view(),name='author'),
 ]
-print(type(urlpatterns))

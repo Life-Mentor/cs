@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 登录 </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
+		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
+	</head>
+	<body>
+		<h1 align='center'> Bug提交处 </h1>
+		<div align='center'>
+			<form method="post">
+			{% csrf_token %}
+			<br/>
+				用&emsp;户&emsp;名：{{ form.username }}
+			<br/>
+			<br/>
+				Bug提交处：{{ form.Bug_name }}
+			<br/>
+			<br/>
+				{{ form.Bug_desc }}
+			<br/>
+			<br/>
+			<button class="button is-primary">提交</button><br/>
+			</form>
+		</div>
+	</body>
+</html>
+

@@ -5,7 +5,7 @@ from django.forms import widgets
 from .models import User_Info
 
 class Reirster(forms.ModelForm):
-    username = forms.CharField(label='用户名',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'用户名','style':"width:220px;"}))
+    username = forms.CharField(label='用户名',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'用户名','style':"width:180px;"}))
     email = forms.EmailField(label='邮箱', max_length=32, widget=forms.EmailInput(attrs={ 'class': 'input is-success', 'placeholder': '邮箱','style':"width:220px;"}))
     password = forms.CharField(label='密码',max_length=8,widget=forms.PasswordInput(attrs={'class':'input is-success',"placeholder":"密码",'style':"width:220px;"}))
     icon = forms.ImageField(label='用户头像',widget=forms.FileInput(attrs = {'class':''}))
