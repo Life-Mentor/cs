@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 from utils.send_email import send_register_email
 from cs import settings
 from .models import Catgory, Post, SubmitBug as bug
-from .form import Submitbug
+from .form import Submitbug, test
 
 class index(View):
     def get(self,requests):
@@ -55,6 +55,7 @@ class SubmitBug(View):
         return render(requests,'bug/SubmitBug.html',{'form':form})
 class author(View):
     def get(self,requests):
-        return render(requests,'article/author.html')
+        form  = test()
+        return render(requests,'article/author.html',{'form':form})
     def post(self,requests):
         return render(requests,'article/author.html')

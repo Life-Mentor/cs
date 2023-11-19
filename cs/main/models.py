@@ -1,6 +1,7 @@
 from django.db import models
 from secondary import models as m
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Catgory(models.Model):
     name = models.CharField(max_length=32, verbose_name='分类名称')
@@ -39,3 +40,6 @@ class SubmitBug(models.Model):
     submitname= models.CharField(max_length=32,verbose_name='用户名字',default='匿名用户')
     Bug_name = models.CharField(max_length=56,verbose_name='bug名字')
     Bug_desc = models.CharField(max_length=256,verbose_name='bug描述')
+
+class test(models.Model):
+    content = RichTextField(default="",verbose_name="正文内容")

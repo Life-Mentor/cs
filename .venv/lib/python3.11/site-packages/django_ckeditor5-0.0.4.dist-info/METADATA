@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: django-ckeditor5
+Version: 0.0.4
+Summary: Django CKEditor 5 集成
+Home-page: https://github.com/n37r06u3/django-ckeditor5
+Author: n37r06u3
+Author-email: n37r06u3@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Dist: django
+Requires-Dist: django-js-asset
+
+Django CKEditor 5
+===
+
+# 介绍 #
+本项目整合了新版 [CKEditor 5](https://ckeditor.com/ckeditor-5/) 到Django. 老版本[django-ckeditor](https://github.com/django-ckeditor/django-ckeditor) 仍然在使用[CKEditor 4](https://ckeditor.com/ckeditor-4/). 
+
+根据 [ckeditor.com](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/migrate.html)官方说明，CKEditor 5是一个你没有用过的船新版本。
+
+整体上仍然使用 [django-ckeditor](https://github.com/django-ckeditor/django-ckeditor/tree/master/ckeditor)项目的架构。不同点是：
+
+- `static/ckeditor5` 包含最新的CKEditor 5经典编辑器（版本会随时更新，尽量与官方同步），[CKEditor 5下载](https://ckeditor.com/ckeditor-5/download/).
+- 移除了`extraPlugins`，老的一些插件，如代码插入编辑，目前不可以使用，需要其他方案。
+- 修改了`static/ckeditor5/ckeditor-init.js`部分代码， 在 `initialiseCKEditor` 方法里:
+    + extraPlugins处理方法代码被删除
+    + CKEditor 5 使用 `ClassicEditor.create` 来初始化创建编辑器，而不是用4的 `CKEDITOR.replace`
+
+# 安装 #
+pip install django-ckeditor5
+
+升级
+pip install django-ckeditor5 -U 
+
+github
+pip install git+https://github.com/n37r06u3/django-ckeditor5
+
+# 配置 #
+添加app
+```
+INSTALLED_APPS = [
+    ...
+    'ckeditor5'
+]
+```
+基础配置
+```
+CKEDITOR5_CONFIGS = {
+    'default': {
+        'toolbar': ["undo", "redo", "bold", "italic", "blockQuote", "imageTextAlternative", "imageUpload", "heading",
+                    "imageStyle:full", "imageStyle:side", "link", "numberedList", "bulletedList"],
+        'height': '300px',
+        'width': '100%',
+    },
+}
+```
+模型定义
+```
+from ckeditor5.fields import RichTextField
+```
+
+
+添加插件
+https://www.npmjs.com/package/ckeditor5-code-block
+
+
+
+# 测试 #
+下载源码解压
+cd ckeditor5_demo
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+python manage.py runserver
+
+http://127.0.0.1:8000/admin/
+
+# 参考 #
+https://github.com/django-ckeditor/django-ckeditor
+
+https://ckeditor.com/ckeditor-4/
+
+https://github.com/pancodia/django-ckeditor5
+
+https://ckeditor.com/ckeditor-5/
+
+# 变更 #
+
+20190304 - v0.0.1 初始化项目 CKEditor 5集成v11.0.1, 新版本django2.1.7测试可用
+
+20190305 - v0.0.2 添加demo
+
+20190306 - v0.0.3 添加大小配置
+
+20190306 - v0.0.4 ckeditor5-build-classic11.0.1到v12.0.0 添加 https://www.npmjs.com/package/ckeditor5-code-block
+
+# TODO #
+添加图片上传插件
+
+添加html源码查看插件
+
+完善安装说明
+
+
