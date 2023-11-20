@@ -1,12 +1,14 @@
 {% extends 'article/template.html' %}
 {% load static %}
 {% block head%}
-	<title> {{ post_list.title|safe}} </title>
+	<title> 文章详情 </title>
 {% endblock head%}
 {% block content %}
-
-<div align='center'>
-	{{ post_list|safe }}
-	{{ post_list.owner|safe}}
+<div class='box'>
+{{ post_list|safe }}
+<br/>
+<br/>
+<br/>
+<h1 class='title'>作者:{{ author }}</h1>
 </div>
 {% endblock content %}

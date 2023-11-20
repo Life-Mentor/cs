@@ -11,9 +11,11 @@
 	</head>
 	<body>
 		<div class="left">
-			<form method="post" action="/">
+			<form method="post">
 				{% csrf_token %}
-				{{ form|safe }}
+				{{ forms.media }}
+				{{ forms }}
+				<button class="button is-primary">提交</button><br/>
 			</form>
 		</div>
 	</body>

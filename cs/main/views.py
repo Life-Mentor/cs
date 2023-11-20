@@ -1,15 +1,12 @@
-import traceback
-from django.shortcuts import redirect, render, HttpResponse
-from django.urls import reverse
+from django.shortcuts import render, HttpResponse
 from django.views import View
-from django.contrib.auth.backends import ModelBackend
 from django.core.paginator import Paginator
 import markdown
 
-from utils.send_email import send_register_email
 from cs import settings
-from .models import Catgory, Post, SubmitBug as bug, User_Post
-from .form import Submitbug
+from .models import Catgory, SubmitBug as bug, Tag, User_Post
+from .form import Submitbug, User_post
+from secondary.models import User_Info
 
 class index(View):
     def get(self,requests):
@@ -40,8 +37,10 @@ class check(View):
                     'markdown.extensions.extra',
                     'markdown.extensions.codehilite',
                     'markdown.extensions.toc',
+                    'markdown.extensions.tables'
                     ])
-            return render(requests,'article/detailed.html',{'post_list':post_})
+                author = post.owner.name
+            return render(requests,'article/detailed.html',{'post_list':post_,'author':author})
         
 class SubmitBug(View):
     def get(self,requests):
@@ -53,7 +52,6 @@ class SubmitBug(View):
             username = form.cleaned_data['username']
             Bug_name = form.cleaned_data['Bug_name']
             bug_desc = form.cleaned_data['Bug_desc']
-            print(username,Bug_name,bug_desc)
             subug = bug()
             subug.Bug_name= Bug_name
             subug.submitname = username
@@ -62,6 +60,39 @@ class SubmitBug(View):
         return render(requests,'bug/SubmitBug.html',{'form':form})
 class author(View):
     def get(self,requests):
-        return render(requests,'article/author.html')
+        user_post =  User_Post.objects.all()
+        form = User_post()
+        return render(requests,'article/author.html',{'forms':form})
     def post(self,requests):
-        return render(requests,'article/author.html')
+        form = User_post(requests.POST)
+        if form.is_valid():
+            content = form.cleaned_data.get('content')
+            title = form.cleaned_data.get('title')
+            author_user = form.cleaned_data.get('username')
+            userpost = User_Post()
+            c = form.cleaned_data.get('catgory')
+            catgory = Catgory.objects.get(name = c)
+            if c is None:
+                c = "随笔杂记"
+            tags = form.cleaned_data.get('tags')
+            if tags is None:
+                tags = "随笔杂记"
+
+            try:
+                post_list = User_Info.objects.filter(name=author_user)
+            except Exception as e:
+                return HttpResponse("你可能还没有注册")
+            else:
+                if post_list.exists():
+                    user = User_Info.objects.get(name = author_user)
+                    tag = Tag.objects.get(name = tags)
+                    userpost.content = content
+                    userpost.title = title
+                    userpost.owner = user
+                    userpost.catgory = catgory
+                    userpost.tags = tag
+                    userpost.save()
+
+            return render(requests,'article/author.html',{"forms":form})
+        return render(requests,'article/author.html',{"forms":form})
+

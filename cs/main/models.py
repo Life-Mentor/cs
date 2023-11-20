@@ -47,10 +47,6 @@ class User_Post(models.Model):
     owner = models.ForeignKey(m.User_Info, on_delete=models.CASCADE,verbose_name='作者')
     catgory = models.ForeignKey(Catgory,on_delete=models.CASCADE, verbose_name='文章分类')
     tags = models.ForeignKey(Tag, on_delete=models.CASCADE, verbose_name='文章标签')
-
-    add_data = models.DateTimeField(verbose_name='添加时间')
-    pub_data = models.DateTimeField(auto_now=True, verbose_name='修改时间')
-
     class Meat:
         verbose_name='用户文章'
         verbose_name_plural = verbose_name
