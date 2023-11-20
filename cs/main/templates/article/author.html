@@ -10,13 +10,11 @@
 		<script src='{% static 'ckeditor/ckeditor/ckeditor.js'%}'></script>
 	</head>
 	<body>
-{% block content %}
-<div class="left">
-    <form method="post" action="/">
-        {% csrf_token %}
-        {{form.as_p}}
-    </form>
-</div>
-{% endblock %}
+		<div class="left">
+			<form method="post" action="/">
+				{% csrf_token %}
+				{{ form|safe }}
+			</form>
+		</div>
 	</body>
 </html>

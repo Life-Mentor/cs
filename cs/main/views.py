@@ -4,11 +4,12 @@ from django.urls import reverse
 from django.views import View
 from django.contrib.auth.backends import ModelBackend
 from django.core.paginator import Paginator
+import markdown
 
 from utils.send_email import send_register_email
 from cs import settings
-from .models import Catgory, Post, SubmitBug as bug
-from .form import Submitbug, test
+from .models import Catgory, Post, SubmitBug as bug, User_Post
+from .form import Submitbug
 
 class index(View):
     def get(self,requests):
@@ -21,7 +22,7 @@ class aboutus(View):
 class overall(View):
     def get(self,requests):
         catgorys = Catgory.objects.all()
-        post_list = Post.objects.all()
+        post_list = User_Post.objects.all()
         paginator = Paginator(post_list, 10)
         page_number = requests.GET.get("page")
         page_obj = paginator.get_page(page_number)
@@ -30,11 +31,17 @@ class overall(View):
 class check(View):
     def get(self,requests,detailed_id):
         try:
-            post_list = Post.objects.filter(id=detailed_id)
+            post_list = User_Post.objects.filter(id=detailed_id)
         except Exception as e:
             return HttpResponse('未查询到此文章')
         else:
-            return render(requests,'article/detailed.html',{'post_list':post_list})
+            for post in post_list:
+                post_ = markdown.markdown(post.content,extensions=[
+                    'markdown.extensions.extra',
+                    'markdown.extensions.codehilite',
+                    'markdown.extensions.toc',
+                    ])
+            return render(requests,'article/detailed.html',{'post_list':post_})
         
 class SubmitBug(View):
     def get(self,requests):
@@ -55,7 +62,6 @@ class SubmitBug(View):
         return render(requests,'bug/SubmitBug.html',{'form':form})
 class author(View):
     def get(self,requests):
-        form  = test()
-        return render(requests,'article/author.html',{'form':form})
+        return render(requests,'article/author.html')
     def post(self,requests):
         return render(requests,'article/author.html')

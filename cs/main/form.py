@@ -1,6 +1,6 @@
 from ckeditor_uploader.fields import fields
 from django import forms
-from .models import SubmitBug, test as t
+from .models import SubmitBug
 
 class Submitbug(forms.ModelForm):
     username = forms.CharField(label='用户名',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'用户名','style':"width:220px;"}))
@@ -10,9 +10,4 @@ class Submitbug(forms.ModelForm):
     class Meta:
         model = SubmitBug
         fields = ('submitname','Bug_name','Bug_desc')
-
-class test(forms.ModelForm):
-    class Meta:
-        model = t
-        fields = ['content']
 

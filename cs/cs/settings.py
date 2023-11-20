@@ -17,8 +17,7 @@ INSTALLED_APPS = [
 
     'main.apps.MainConfig',
     'secondary.apps.SecondaryConfig',
-    'ckeditor',
-    'ckeditor_uploader',
+    'mdeditor',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,7 +68,6 @@ CKEDITOR_BASEPATH = STATIC_ROOT,'ckeditor'
 """
 
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"),]
-CKEDITOR_BASEPATH = STATICFILES_DIRS[0],'ckeditor'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
@@ -81,57 +79,3 @@ EMAIL_HOST_USER = "959735909@qq.com"    # 自己的邮箱地址
 EMAIL_HOST_PASSWORD = "ryrekrdqvxezbege"       # 自己的邮箱密码
 EMAIL_PORT = 25
 EMAIL_USE_SSL = True
-CKEDITOR_CONFIGS = {
-    'default': {
-        'skin': 'moono',
-        # 'skin': 'office2013',
-        'toolbar_Basic': [
-            ['Source', '-', 'Bold', 'Italic']
-        ],
-        'toolbar_YourCustomToolbarConfig': [
-            {'name': 'document', 'items': ['Save', 'Preview', '-', 'Templates','Find', 'Replace']},
-
-            {'name': 'basicstyles',
-             'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
-            {'name': 'paragraph',
-             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-',
-                       'JustifyLeft', 'JustifyCenter', '-']},
-            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
-            {'name': 'insert',
-             'items': ['Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar']},
-
-            {'name': 'styles', 'items': ['Styles', 'Format', 'Font', 'FontSize']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
-
-            {'name': 'yourcustomtools', 'items': [
-                'Preview',
-                'Maximize',
-            ]},
-        ],
-        'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
-        # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
-        # 'height': 291,
-        # 'width': '100%',
-        # 'filebrowserWindowHeight': 725,
-        # 'filebrowserWindowWidth': 940,
-        # 'toolbarCanCollapse': True,
-        'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
-        'tabSpaces': 4,
-        'extraPlugins': ','.join([
-            'uploadimage', # the upload image feature
-            # your extra plugins here
-            'div',
-            'autolink',
-            'autoembed',
-            'embedsemantic',
-            'autogrow',
-            # 'devtools',
-            'widget',
-            'lineutils',
-            'clipboard',
-            'dialog',
-            'dialogui',
-            'elementspath'
-        ]),
-    }
-}
