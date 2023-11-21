@@ -96,4 +96,3 @@ def home(request):
         return render(request,'users/home.html',{'user':user})
     else:
         return HttpResponse('你可能没有登录')
-

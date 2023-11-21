@@ -94,7 +94,7 @@ class author(View):
                     userpost.tags = tag
                     userpost.save()
 
-            return render(requests,'article/author.html',{"forms":form})
+            return render(requests,'article/author.html',{"forms":form,"code":"发布成功"})
         return render(requests,'article/author.html',{"forms":form})
 class my_article(View):
     def get(self,requests):
