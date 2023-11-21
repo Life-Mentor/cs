@@ -40,7 +40,8 @@ class check(View):
                     'markdown.extensions.tables'
                     ])
                 author = post.owner.name
-            return render(requests,'article/detailed.html',{'post_list':post_,'author':author})
+                title = post.title
+            return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title})
         
 class SubmitBug(View):
     def get(self,requests):
@@ -95,4 +96,13 @@ class author(View):
 
             return render(requests,'article/author.html',{"forms":form})
         return render(requests,'article/author.html',{"forms":form})
-
+class my_article(View):
+    def get(self,requests):
+        userid = requests.COOKIES.get('userid')
+        users = User_Info.objects.get(id = userid)
+        if users:
+            post_list = User_Post.objects.filter(owner = users.id)
+            return render(requests,'article/my_article.html',{"post_list":post_list,"users":users})
+        return render(requests,'article/my_article.html')
+    def post(self,requests):
+        return render(requests,'article/my_article.html')

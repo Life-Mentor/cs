@@ -22,7 +22,6 @@ class UserInfo(models.Model):
 
 class User_Info(models.Model):
 
-
     name = models.CharField(max_length=32,verbose_name='账号')
     password = models.CharField(max_length=256)
     email = models.CharField('邮箱',max_length=52)
