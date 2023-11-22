@@ -14,4 +14,49 @@
 <br/>
 <h1 class='title'>作者:{{ author }}</h1>
 </div>
+<div class='columns'>
+	<div class='column is-2'>
+	</div>
+	<div class='column is-6'>
+		<form method="post">
+			{% csrf_token %}
+			<article class="media">
+				<figure class="media-left">
+					<p class="image is-64x64"> <img src='{{ MEDIA_URL}}{{ userinfo.icon }}'> </p>
+				</figure>
+				<div class="media-content">
+					<div class="field">
+						<p class="control"> 
+							<!-- <textarea class="textarea" placeholder="请发布你的看法吧"></textarea>  -->
+							{{ form.desc }}
+						</p>
+					</div>
+					<nav class="level">
+						<div class="level-left">
+							<div class="level-item"> <button class="button is-info">发布</button> </div>
+							{{ code }}
+						</div>
+					</nav>
+				</div>
+			</article>
+		</form>
+	</div>
+</div>
+<div class='columns'>
+	<div class='column is-1'>
+	</div>
+	<div class='column is-8'>
+	<article class="media box">
+		<figure class="media-left"> <p class="image is-64x64"> <img src='{{ MEDIA_URL}}{{ userinfo.icon }}'> </p> </figure>
+		<div class="media-content">
+			<div class="content">
+				<p>
+				<strong>{{ userinfo.name }}</strong> <small>{{ userinfo.email }}</small>
+				<br>hello world</p>
+			</div>
+		</div>
+	</article>
+	</div>
+</div>
+
 {% endblock content %}

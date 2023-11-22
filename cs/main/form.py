@@ -1,5 +1,5 @@
 from django import forms
-from .models import SubmitBug, User_Post
+from .models import SubmitBug, User_Post, suggestion as su, Discuss
 from mdeditor.fields import MDTextField
 
 class Submitbug(forms.ModelForm):
@@ -20,3 +20,17 @@ class User_post(forms.ModelForm):
     class Meta:
         model = User_Post
         fields = ['content']
+
+class suggestion(forms.ModelForm):
+    su_name = forms.CharField(max_length=32,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'用户名','style':"width:220px;"}))
+    su_title = forms.CharField(max_length=32,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'简单描述建议','style':"width:220px;"}))
+    su_desc = forms.Textarea()
+    class Meta:
+        model = su
+        fields = ["su_name","su_title","su_desc"]
+
+class discuss(forms.ModelForm):
+    desc = forms.CharField(max_length=256,widget=forms.TextInput(attrs={'class':'textarea','placeholder':'请发布你的看法吧'}))
+    class Meta:
+        model = Discuss
+        fields = ["desc"]

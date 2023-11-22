@@ -53,3 +53,18 @@ class User_Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class suggestion(models.Model):
+    su_name = models.CharField(max_length=32,default='匿名用户',verbose_name='用户名称')
+    su_title = models.CharField(max_length=32,verbose_name="建议标题",default=" ")
+    su_desc = models.TextField(max_length=256,verbose_name='具体建议')
+
+    class Meat:
+        verbose_name = "网站建议"
+
+class Discuss(models.Model):
+    name = models.ForeignKey(m.User_Info,on_delete=models.CASCADE,verbose_name="用户")
+    desc = models.CharField(max_length=256,verbose_name="评论")
+    
+    class Meat:
+        verbose_name = "评论"

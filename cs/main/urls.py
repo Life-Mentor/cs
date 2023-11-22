@@ -9,4 +9,5 @@ urlpatterns = [
     path('submitbug/',SubmitBug.as_view(),name='submitbug'),
     path('author/',author.as_view(),name='author'),
     path('my_article/',my_article.as_view(),name='my_article'),
+    path("suggestion/",suggestion.as_view(),name='suggestion'),
 ]

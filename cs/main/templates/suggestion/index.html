@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		{% load static %}
+		<link rel="shortcut icon" href="{% static 'imga/favicon.ico' %}" type="image/x-icon" />
+		<title> 首页 </title>
+		<link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+		<link rel="stylesheet" href="{% static 'bulma/my_css/my.css' %}">
+		<link rel="stylesheet" href="{% static 'imga/img/css/all.css' %}">
+	</head>
+	<body>
+		<br/>
+		<h1 class="title" align='center'> 提交对网站的建议 </h1>
+		<div align="center" class="">
+			<form method="post">
+				{% csrf_token %}
+				<br/>
+				<br/>
+				啊用户名:{{ form.su_name }}
+				<br/>
+				<br/>
+				建议名称:{{ form.su_title }}
+				<br/>
+				<br/>
+				建议详情:{{ form.su_desc }}
+				<br/>
+				<br/>
+				<button class="button is-primary">提交</button><br/>
+				{{ code }}
+			</form>
+		</div>
+	</body>
+</html>

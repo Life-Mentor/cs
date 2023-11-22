@@ -4,8 +4,8 @@ from django.core.paginator import Paginator
 import markdown
 
 from cs import settings
-from .models import Catgory, SubmitBug as bug, Tag, User_Post
-from .form import Submitbug, User_post
+from .models import Catgory, SubmitBug as bug, Tag, User_Post, suggestion as su
+from .form import Submitbug, User_post, suggestion as SU, discuss
 from secondary.models import User_Info
 
 class index(View):
@@ -27,6 +27,13 @@ class overall(View):
 
 class check(View):
     def get(self,requests,detailed_id):
+        form = discuss()
+        users = requests.COOKIES.get("userid")
+        if users != 0:
+            user = User_Info.objects.get(id=users)
+        else:
+            return HttpResponse("请先登录")
+
         try:
             post_list = User_Post.objects.filter(id=detailed_id)
         except Exception as e:
@@ -41,7 +48,43 @@ class check(View):
                     ])
                 author = post.owner.name
                 title = post.title
-            return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title})
+                return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title,"form":form,"userinfo":user})
+    def post(self,requests,detailed_id):
+        form = discuss(requests.POST)
+        if form.is_valid():
+            users = requests.COOKIES.get("userid")
+            if users != 0:
+                user = User_Info.objects.get(id=users)
+            else:
+                return HttpResponse("请先登录")
+            name = user.name
+            desc = form.cleaned_data.get('desc')
+            discus = discuss()
+            discus.name = name
+            discus.desc = desc
+            # discus.save()
+            print(name,desc)
+        try:
+            post_list = User_Post.objects.filter(id=detailed_id)
+        except Exception as e:
+            return HttpResponse('未查询到此文章')
+        else:
+            for post in post_list:
+                post_ = markdown.markdown(post.content,extensions=[
+                    'markdown.extensions.extra',
+                    'markdown.extensions.codehilite',
+                    'markdown.extensions.toc',
+                    'markdown.extensions.tables'
+                    ])
+                author = post.owner.name
+                title = post.title
+                users = requests.COOKIES.get("userid")
+                if users != 0:
+                    user = User_Info.objects.get(id=users)
+                else:
+                    return HttpResponse("请先登录")
+                return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title,"form":form,"userinfo":user,"code":"发布成功"})
+        return render(requests,'article/detailed.html')
         
 class SubmitBug(View):
     def get(self,requests):
@@ -59,6 +102,7 @@ class SubmitBug(View):
             subug.Bug_desc = bug_desc
             subug.save()
         return render(requests,'bug/SubmitBug.html',{'form':form})
+
 class author(View):
     def get(self,requests):
         user_post =  User_Post.objects.all()
@@ -93,7 +137,6 @@ class author(View):
                     userpost.catgory = catgory
                     userpost.tags = tag
                     userpost.save()
-
             return render(requests,'article/author.html',{"forms":form,"code":"发布成功"})
         return render(requests,'article/author.html',{"forms":form})
 class my_article(View):
@@ -106,3 +149,21 @@ class my_article(View):
         return render(requests,'article/my_article.html')
     def post(self,requests):
         return render(requests,'article/my_article.html')
+
+class suggestion(View):
+    def get(self,requests):
+        form = SU()
+        return render(requests,'suggestion/index.html',{"form":form})
+    def post(self,requests):
+        form = SU(requests.POST)
+        if form.is_valid():
+            su_name = form.cleaned_data.get('su_name')
+            su_title = form.cleaned_data.get('su_title')
+            su_desc = form.cleaned_data.get('su_desc')
+            sus = su()
+            sus.su_name = su_name
+            sus.su_title = su_title
+            sus.su_desc = su_desc
+            sus.save()
+        return render(requests,'suggestion/index.html',{"form":form,"code":"反馈成功，我们会讨论您所提的建议"})
+
