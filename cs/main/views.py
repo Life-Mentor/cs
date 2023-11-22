@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from django.urls import reverse
 from django.views import View
 from django.core.paginator import Paginator
 import markdown
@@ -7,6 +8,12 @@ from cs import settings
 from .models import Catgory, SubmitBug as bug, Tag, User_Post, suggestion as su
 from .form import Submitbug, User_post, suggestion as SU, discuss
 from secondary.models import User_Info
+
+
+def logout(requests):
+    responses = redirect(reverse('main:index'))
+    responses.delete_cookie('userid')
+    return responses
 
 class index(View):
     def get(self,requests):
