@@ -42,21 +42,24 @@
 		</form>
 	</div>
 </div>
+
+{% for discu in discus %}
 <div class='columns'>
 	<div class='column is-1'>
 	</div>
 	<div class='column is-8'>
 	<article class="media box">
-		<figure class="media-left"> <p class="image is-64x64"> <img src='{{ MEDIA_URL}}{{ userinfo.icon }}'> </p> </figure>
+		<figure class="media-left"> <p class="image is-64x64"> <img src='{{ MEDIA_URL}}{{ discu.name.icon }}'> </p> </figure>
 		<div class="media-content">
 			<div class="content">
 				<p>
-				<strong>{{ userinfo.name }}</strong> <small>{{ userinfo.email }}</small>
-				<br>hello world</p>
+				<strong>{{ discu.name.name }}</strong> <small>{{ discu.name.email }}</small>
+				<br>{{ discu.desc }}</p>
 			</div>
 		</div>
 	</article>
 	</div>
 </div>
+{% endfor %}
 
 {% endblock content %}

@@ -5,10 +5,9 @@ from django.core.paginator import Paginator
 import markdown
 
 from cs import settings
-from .models import Catgory, SubmitBug as bug, Tag, User_Post, suggestion as su
+from .models import Catgory, SubmitBug as bug, Tag, User_Post, suggestion as su, Discuss
 from .form import Submitbug, User_post, suggestion as SU, discuss
 from secondary.models import User_Info
-
 
 def logout(requests):
     responses = redirect(reverse('main:index'))
@@ -36,7 +35,7 @@ class check(View):
     def get(self,requests,detailed_id):
         form = discuss()
         users = requests.COOKIES.get("userid")
-        if users != 0:
+        if users != 0 and users is not None:
             user = User_Info.objects.get(id=users)
         else:
             return HttpResponse("请先登录")
@@ -46,43 +45,45 @@ class check(View):
         except Exception as e:
             return HttpResponse('未查询到此文章')
         else:
+            # ------------------
+
+            post_user = User_Post.objects.get(id=detailed_id)
+            discus = Discuss.objects.filter(belong=post_user)
+
+            #-------------------
             for post in post_list:
-                post_ = markdown.markdown(post.content,extensions=[
-                    'markdown.extensions.extra',
-                    'markdown.extensions.codehilite',
-                    'markdown.extensions.toc',
-                    'markdown.extensions.tables'
-                    ])
+                post_ = markdown.markdown(post.content,extensions=[ 'markdown.extensions.extra', 'markdown.extensions.codehilite', 'markdown.extensions.toc', 'markdown.extensions.tables' ])
                 author = post.owner.name
                 title = post.title
-                return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title,"form":form,"userinfo":user})
+                return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title,"form":form,"userinfo":user,"discus":discus})
     def post(self,requests,detailed_id):
         form = discuss(requests.POST)
         if form.is_valid():
             users = requests.COOKIES.get("userid")
-            if users != 0:
+            if users != 0 and users is not None:
                 user = User_Info.objects.get(id=users)
             else:
                 return HttpResponse("请先登录")
-            name = user.name
             desc = form.cleaned_data.get('desc')
-            discus = discuss()
-            discus.name = name
+            discus = Discuss()
+            discus.name = user
             discus.desc = desc
-            # discus.save()
-            print(name,desc)
+            post_user = User_Post.objects.get(id=detailed_id)
+            discus.belong = post_user
+            discus.save()
         try:
             post_list = User_Post.objects.filter(id=detailed_id)
         except Exception as e:
             return HttpResponse('未查询到此文章')
         else:
+            # ------------------
+
+            post_user = User_Post.objects.get(id=detailed_id)
+            discus = Discuss.objects.filter(belong=post_user)
+
+            #-------------------
             for post in post_list:
-                post_ = markdown.markdown(post.content,extensions=[
-                    'markdown.extensions.extra',
-                    'markdown.extensions.codehilite',
-                    'markdown.extensions.toc',
-                    'markdown.extensions.tables'
-                    ])
+                post_ = markdown.markdown(post.content,extensions=[ 'markdown.extensions.extra', 'markdown.extensions.codehilite', 'markdown.extensions.toc', 'markdown.extensions.tables' ])
                 author = post.owner.name
                 title = post.title
                 users = requests.COOKIES.get("userid")
@@ -90,7 +91,7 @@ class check(View):
                     user = User_Info.objects.get(id=users)
                 else:
                     return HttpResponse("请先登录")
-                return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title,"form":form,"userinfo":user,"code":"发布成功"})
+                return render(requests,'article/detailed.html',{'post_list':post_,'author':author,"title":title,"form":form,"userinfo":user,"discus":discus})
         return render(requests,'article/detailed.html')
         
 class SubmitBug(View):

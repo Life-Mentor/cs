@@ -65,6 +65,7 @@ class suggestion(models.Model):
 class Discuss(models.Model):
     name = models.ForeignKey(m.User_Info,on_delete=models.CASCADE,verbose_name="用户")
     desc = models.CharField(max_length=256,verbose_name="评论")
+    belong = models.ForeignKey(User_Post,on_delete=models.CASCADE,verbose_name="所属文章")
     
     class Meat:
         verbose_name = "评论"
