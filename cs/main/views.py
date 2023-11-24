@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
+from django.utils.autoreload import request_finished
 from django.views import View
 from django.core.paginator import Paginator
 import markdown
@@ -174,4 +175,10 @@ class suggestion(View):
             sus.su_desc = su_desc
             sus.save()
         return render(requests,'suggestion/index.html',{"form":form,"code":"反馈成功，我们会讨论您所提的建议"})
+
+def not_404(requests,exception=None):
+    return render(requests,"errors/404.html")
+
+def not_403(requests,exception=None):
+    return render(requests,"errors/403.html")
 

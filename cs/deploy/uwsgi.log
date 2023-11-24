@@ -1,0 +1,475 @@
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 20:53:15 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55ede1e99370 ***
+probably another instance of uWSGI is running on the same address (0.0.0.0:8000).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:01:04 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x555d437dd370 ***
+uwsgi socket 0 bound to TCP address 0.0.0.0:8000 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 242382)
+spawned uWSGI worker 1 (pid: 242388, cores: 30)
+spawned uWSGI worker 2 (pid: 242401, cores: 30)
+spawned uWSGI worker 3 (pid: 242419, cores: 30)
+spawned uWSGI worker 4 (pid: 242440, cores: 30)
+spawned uWSGI worker 5 (pid: 242451, cores: 30)
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:01:31 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5644ba3d0370 ***
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 243615)
+spawned uWSGI worker 1 (pid: 243619, cores: 30)
+spawned uWSGI worker 2 (pid: 243620, cores: 30)
+spawned uWSGI worker 3 (pid: 243646, cores: 30)
+spawned uWSGI worker 4 (pid: 243680, cores: 30)
+spawned uWSGI worker 5 (pid: 243710, cores: 30)
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:02:03 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5586918cb370 ***
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 245067)
+spawned uWSGI worker 1 (pid: 245071, cores: 30)
+spawned uWSGI worker 2 (pid: 245074, cores: 30)
+spawned uWSGI worker 3 (pid: 245097, cores: 30)
+spawned uWSGI worker 4 (pid: 245126, cores: 30)
+spawned uWSGI worker 5 (pid: 245133, cores: 30)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:04:08 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x562a50f29290 ***
+uWSGI http bound on 127.0.0.1:8000 fd 3
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:04:24 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x564cc2edb290 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 6
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 250651)
+spawned uWSGI worker 1 (pid: 250655, cores: 30)
+spawned uWSGI worker 2 (pid: 250656, cores: 30)
+spawned uWSGI worker 3 (pid: 250657, cores: 30)
+spawned uWSGI worker 4 (pid: 250669, cores: 30)
+spawned uWSGI worker 5 (pid: 250690, cores: 30)
+spawned uWSGI http 1 (pid: 250717)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:09:39 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55d33c66b290 ***
+probably another instance of uWSGI is running on the same address (127.0.0.1:8001).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:09:54 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x561ebccc3290 ***
+probably another instance of uWSGI is running on the same address (127.0.0.1:8001).
+bind(): Address already in use [core/socket.c line 769]
+gateway "uWSGI http 1" has been buried (pid: 250717)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/duck/Project_Django/cs/deploy
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 6 mapped to socket 0 (127.0.0.1:8000)
+running /usr/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:11:48 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x564a47eb4030 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 inherited INET address 127.0.0.1:8000 fd 6
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 250651)
+spawned uWSGI worker 1 (pid: 267348, cores: 30)
+spawned uWSGI worker 2 (pid: 267350, cores: 30)
+spawned uWSGI worker 3 (pid: 267375, cores: 30)
+spawned uWSGI worker 4 (pid: 267413, cores: 30)
+spawned uWSGI worker 5 (pid: 267442, cores: 30)
+spawned uWSGI http 1 (pid: 267481)
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:12:46 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55b62fb5d290 ***
+probably another instance of uWSGI is running on the same address (127.0.0.1:8001).
+bind(): Address already in use [core/socket.c line 769]
+gateway "uWSGI http 1" has been buried (pid: 267481)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/duck/Project_Django/cs/deploy
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 6 mapped to socket 0 (127.0.0.1:8000)
+running /usr/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:13:48 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x565185fa9030 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 inherited INET address 127.0.0.1:8000 fd 6
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 250651)
+spawned uWSGI worker 1 (pid: 272221, cores: 30)
+spawned uWSGI worker 2 (pid: 272228, cores: 30)
+spawned uWSGI worker 3 (pid: 272254, cores: 30)
+spawned uWSGI worker 4 (pid: 272263, cores: 30)
+spawned uWSGI worker 5 (pid: 272299, cores: 30)
+spawned uWSGI http 1 (pid: 272348)
+gateway "uWSGI http 1" has been buried (pid: 272348)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/duck/Project_Django/cs/deploy
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 6 mapped to socket 0 (127.0.0.1:8000)
+running /usr/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:13:52 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55a894462030 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 inherited INET address 127.0.0.1:8000 fd 6
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 250651)
+spawned uWSGI worker 1 (pid: 272594, cores: 30)
+spawned uWSGI worker 2 (pid: 272596, cores: 30)
+spawned uWSGI worker 3 (pid: 272611, cores: 30)
+spawned uWSGI worker 4 (pid: 272615, cores: 30)
+spawned uWSGI worker 5 (pid: 272617, cores: 30)
+spawned uWSGI http 1 (pid: 272680)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 272680)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.22 (64bit) on [Fri Nov 24 21:15:06 2023] ***
+compiled with version: 13.2.1 20230730 on 01 August 2023 23:39:57
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x556423032290 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 6
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 275677)
+spawned uWSGI worker 1 (pid: 275681, cores: 30)
+spawned uWSGI worker 2 (pid: 275696, cores: 30)
+spawned uWSGI worker 3 (pid: 275720, cores: 30)
+spawned uWSGI worker 4 (pid: 275755, cores: 30)
+spawned uWSGI worker 5 (pid: 275772, cores: 30)
+spawned uWSGI http 1 (pid: 275776)
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+-- unavailable modifier requested: 0 --
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 275776)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.

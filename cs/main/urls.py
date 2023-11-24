@@ -12,3 +12,6 @@ urlpatterns = [
     path("suggestion/",suggestion.as_view(),name='suggestion'),
     path("logout/",logout,name='logout'),
 ]
+
+handler403 = not_404
+handler404 = not_403
