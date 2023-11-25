@@ -47,10 +47,11 @@ class check(View):
             return HttpResponse('未查询到此文章')
         else:
             # ------------------
-
-            post_user = User_Post.objects.get(id=detailed_id)
+            try:
+                post_user = User_Post.objects.get(id=detailed_id)
+            except:
+                return HttpResponse("获取失败，是不是想干我网站")
             discus = Discuss.objects.filter(belong=post_user)
-
             #-------------------
             for post in post_list:
                 post_ = markdown.markdown(post.content,extensions=[ 'markdown.extensions.extra', 'markdown.extensions.codehilite', 'markdown.extensions.toc', 'markdown.extensions.tables' ])
@@ -78,8 +79,10 @@ class check(View):
             return HttpResponse('未查询到此文章')
         else:
             # ------------------
-
-            post_user = User_Post.objects.get(id=detailed_id)
+            try:
+                post_user = User_Post.objects.get(id=detailed_id)
+            except:
+                return HttpResponse("获取失败，是不是想干我网站")
             discus = Discuss.objects.filter(belong=post_user)
 
             #-------------------
