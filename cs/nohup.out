@@ -1,0 +1,18 @@
+Watching for file changes with StatReloader
+[25/Nov/2023 02:46:14] "GET / HTTP/1.1" 200 1473
+[25/Nov/2023 02:46:14] "GET /static/bulma/my_css/my.css HTTP/1.1" 304 0
+[25/Nov/2023 02:46:14] "GET /static/imga/default.jpg HTTP/1.1" 304 0
+[25/Nov/2023 02:46:14] "GET /static/bulma/css/bulma.css HTTP/1.1" 200 245486
+[25/Nov/2023 02:46:14] "GET /static/bulma/my_css/b.png HTTP/1.1" 200 988918
+[25/Nov/2023 02:46:14] "GET /static/audio/sanye.mp3 HTTP/1.1" 200 4963773
+[25/Nov/2023 02:46:15] "GET /static/imga/img/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 109808
+[25/Nov/2023 02:46:15] "GET /static/imga/favicon.ico HTTP/1.1" 304 0
+[25/Nov/2023 02:46:16,376] - Broken pipe from ('127.0.0.1', 40678)
+[25/Nov/2023 02:46:21] "GET /static/audio/sanye.mp3 HTTP/1.1" 200 4963773
+[25/Nov/2023 02:46:22] "GET / HTTP/1.1" 200 1473
+[25/Nov/2023 02:46:22,902] - Broken pipe from ('127.0.0.1', 40682)
+[25/Nov/2023 02:46:23] "GET /static/audio/sanye.mp3 HTTP/1.1" 200 4963773
+[25/Nov/2023 02:46:25] "GET / HTTP/1.1" 200 1473
+[25/Nov/2023 02:46:25,132] - Broken pipe from ('127.0.0.1', 40688)
+[25/Nov/2023 02:46:25] "GET /static/audio/sanye.mp3 HTTP/1.1" 200 4963773
+[25/Nov/2023 02:46:26,521] - Broken pipe from ('127.0.0.1', 43200)
