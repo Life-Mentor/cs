@@ -14,7 +14,7 @@ class Submitbug(forms.ModelForm):
 class User_post(forms.ModelForm):
     title = forms.CharField(label='文章标题',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'文章标题','style':"width:220px;"}))
     content = MDTextField()
-    username = forms.CharField(label='作者名称',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'作者名','style':"width:220px;"}))
+    # username = forms.CharField(label='作者名称',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'作者名','style':"width:220px;"}))
     catgory = forms.CharField(label='文章分类',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'不知道写什么就"随笔杂记"','style':"width:220px;"}))
     tags = forms.CharField(label='文章标签',max_length=25,widget=forms.TextInput(attrs={'class':'input is-success','placeholder':'不知道写什么就"随笔杂记"','style':"width:220px;"}))
     class Meta:

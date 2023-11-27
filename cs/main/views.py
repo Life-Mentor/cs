@@ -1,11 +1,9 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.urls import reverse
-from django.utils.autoreload import request_finished
 from django.views import View
 from django.core.paginator import Paginator
 import markdown
 
-from cs import settings
 from .models import Catgory, SubmitBug as bug, Tag, User_Post, suggestion as su, Discuss
 from .form import Submitbug, User_post, suggestion as SU, discuss
 from secondary.models import User_Info
@@ -117,7 +115,6 @@ class SubmitBug(View):
 
 class author(View):
     def get(self,requests):
-        user_post =  User_Post.objects.all()
         form = User_post()
         return render(requests,'article/author.html',{'forms':form})
     def post(self,requests):
@@ -125,7 +122,7 @@ class author(View):
         if form.is_valid():
             content = form.cleaned_data.get('content')
             title = form.cleaned_data.get('title')
-            author_user = form.cleaned_data.get('username')
+            author_user = requests.COOKIES.get('userid')
             userpost = User_Post()
             c = form.cleaned_data.get('catgory')
             catgory = Catgory.objects.get(name = c)
@@ -136,12 +133,12 @@ class author(View):
                 tags = "随笔杂记"
 
             try:
-                post_list = User_Info.objects.filter(name=author_user)
+                post_list = User_Info.objects.filter(id=author_user)
             except Exception as e:
                 return HttpResponse("你可能还没有注册")
             else:
                 if post_list.exists():
-                    user = User_Info.objects.get(name = author_user)
+                    user = User_Info.objects.get(id = author_user)
                     tag = Tag.objects.get(name = tags)
                     userpost.content = content
                     userpost.title = title
@@ -178,7 +175,6 @@ class suggestion(View):
             sus.su_desc = su_desc
             sus.save()
         return render(requests,'suggestion/index.html',{"form":form,"code":"反馈成功，我们会讨论您所提的建议"})
-
 def not_404(requests,exception=None):
     return render(requests,"errors/404.html")
 

@@ -222,3 +222,323 @@ spawned uWSGI worker 3 (pid: 412909, cores: 30)
 spawned uWSGI worker 4 (pid: 412938, cores: 30)
 spawned uWSGI worker 5 (pid: 412956, cores: 30)
 spawned uWSGI http 1 (pid: 413020)
+*** Starting uWSGI 2.0.23 (64bit) on [Sun Nov 26 10:23:53 2023] ***
+compiled with version: 13.2.1 20230801 on 23 November 2023 12:05:14
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /home/duck/Project_Django/.venv/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x560f70d8bb40 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 6
+Python version: 3.11.5 (main, Sep  2 2023, 14:16:33) [GCC 13.2.1 20230801]
+PEP 405 virtualenv detected: /home/duck/Project_Django/.venv/
+Set PythonHome to /home/duck/Project_Django/.venv/
+Python main interpreter initialized at 0x7fc389788b78
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+ModuleNotFoundError: No module named 'mmcsite'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fc389788b78 pid: 36116 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 36116)
+spawned uWSGI worker 1 (pid: 36197, cores: 30)
+spawned uWSGI worker 2 (pid: 36206, cores: 30)
+spawned uWSGI worker 3 (pid: 36249, cores: 30)
+spawned uWSGI worker 4 (pid: 36255, cores: 30)
+spawned uWSGI worker 5 (pid: 36271, cores: 30)
+spawned uWSGI http 1 (pid: 36318)
+gateway "uWSGI http 1" has been buried (pid: 36318)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/duck/Project_Django/cs/deploy
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 6 mapped to socket 0 (127.0.0.1:8000)
+running /home/duck/Project_Django/.venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.23 (64bit) on [Sun Nov 26 05:38:37 2023] ***
+compiled with version: 13.2.1 20230801 on 23 November 2023 12:05:14
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+detected binary path: /home/duck/Project_Django/.venv/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x5570a093d940 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 inherited INET address 127.0.0.1:8000 fd 6
+Python version: 3.11.5 (main, Sep  2 2023, 14:16:33) [GCC 13.2.1 20230801]
+PEP 405 virtualenv detected: /home/duck/Project_Django/.venv/
+Set PythonHome to /home/duck/Project_Django/.venv/
+Python main interpreter initialized at 0x7f4e17b88b78
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+ModuleNotFoundError: No module named 'mmcsite'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f4e17b88b78 pid: 36116 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 36116)
+spawned uWSGI worker 1 (pid: 420491, cores: 30)
+spawned uWSGI worker 2 (pid: 420492, cores: 30)
+spawned uWSGI worker 3 (pid: 420537, cores: 30)
+spawned uWSGI worker 4 (pid: 420581, cores: 30)
+spawned uWSGI worker 5 (pid: 420582, cores: 30)
+spawned uWSGI http 1 (pid: 420641)
+*** Starting uWSGI 2.0.23 (64bit) on [Mon Nov 27 13:01:32 2023] ***
+compiled with version: 13.2.1 20230801 on 23 November 2023 12:05:14
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /home/duck/Project_Django/.venv/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x556f2e74bdd0 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 6
+Python version: 3.11.5 (main, Sep  2 2023, 14:16:33) [GCC 13.2.1 20230801]
+PEP 405 virtualenv detected: /home/duck/Project_Django/.venv/
+Set PythonHome to /home/duck/Project_Django/.venv/
+Python main interpreter initialized at 0x7fef70388b78
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+ModuleNotFoundError: No module named 'mmcsite'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 3 seconds on interpreter 0x7fef70388b78 pid: 111291 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 111291)
+spawned uWSGI worker 1 (pid: 111559, cores: 30)
+spawned uWSGI worker 2 (pid: 111562, cores: 30)
+spawned uWSGI worker 3 (pid: 111607, cores: 30)
+spawned uWSGI worker 4 (pid: 111622, cores: 30)
+spawned uWSGI worker 5 (pid: 111625, cores: 30)
+spawned uWSGI http 1 (pid: 111700)
+[pid: 111625|app: 0|req: 1/1] 127.0.0.1 () {30 vars in 311 bytes} [Mon Nov 27 05:01:43 2023] GET / => generated 1461 bytes in 563 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 111625|app: 0|req: 2/2] 127.0.0.1 () {54 vars in 1000 bytes} [Mon Nov 27 05:18:21 2023] GET /favicon.ico => generated 4135 bytes in 112 msecs (HTTP/1.1 404) 6 headers in 215 bytes (1 switches on core 27)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 111700)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.23 (64bit) on [Mon Nov 27 13:20:56 2023] ***
+compiled with version: 13.2.1 20230801 on 23 November 2023 12:05:14
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /home/duck/Project_Django/.venv/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x556399b94dd0 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 6
+Python version: 3.11.5 (main, Sep  2 2023, 14:16:33) [GCC 13.2.1 20230801]
+PEP 405 virtualenv detected: /home/duck/Project_Django/.venv/
+Set PythonHome to /home/duck/Project_Django/.venv/
+Python main interpreter initialized at 0x7f561fd88b78
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+ModuleNotFoundError: No module named 'mmcsite'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f561fd88b78 pid: 152888 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 152888)
+spawned uWSGI worker 1 (pid: 152959, cores: 30)
+spawned uWSGI worker 2 (pid: 152962, cores: 30)
+spawned uWSGI worker 3 (pid: 152971, cores: 30)
+spawned uWSGI worker 4 (pid: 153027, cores: 30)
+spawned uWSGI worker 5 (pid: 153071, cores: 30)
+spawned uWSGI http 1 (pid: 153080)
+[pid: 153071|app: 0|req: 1/1] 127.0.0.1 () {56 vars in 1079 bytes} [Mon Nov 27 05:20:59 2023] GET / => generated 1461 bytes in 85 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 1)
+[pid: 152962|app: 0|req: 1/2] 127.0.0.1 () {54 vars in 995 bytes} [Mon Nov 27 05:21:00 2023] GET /static/bulma/css/bulma.css => generated 179 bytes in 99 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 13)
+[pid: 152959|app: 0|req: 3/3] 127.0.0.1 () {54 vars in 997 bytes} [Mon Nov 27 05:21:00 2023] GET /static/imga/img/css/all.css => generated 179 bytes in 114 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 1)
+[pid: 152959|app: 0|req: 3/4] 127.0.0.1 () {56 vars in 1091 bytes} [Mon Nov 27 05:21:00 2023] GET /static/imga/default.jpg => generated 179 bytes in 114 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 4)
+[pid: 152959|app: 0|req: 3/5] 127.0.0.1 () {56 vars in 1050 bytes} [Mon Nov 27 05:21:00 2023] GET /static/bulma/my_css/my.css => generated 179 bytes in 119 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 2)
+[pid: 153071|app: 0|req: 2/6] 127.0.0.1 () {52 vars in 935 bytes} [Mon Nov 27 05:21:00 2023] GET /static/audio/sanye.mp3 => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 2)
+[pid: 153071|app: 0|req: 3/7] 127.0.0.1 () {50 vars in 950 bytes} [Mon Nov 27 05:21:17 2023] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 4)
+[pid: 153071|app: 0|req: 4/8] 127.0.0.1 () {54 vars in 1126 bytes} [Mon Nov 27 05:21:19 2023] GET /static/imga/favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 5)
+[pid: 153071|app: 0|req: 5/9] 127.0.0.1 () {52 vars in 1071 bytes} [Mon Nov 27 05:21:25 2023] GET /static/imga/default.jpg => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 153071|app: 0|req: 6/10] 127.0.0.1 () {62 vars in 1195 bytes} [Mon Nov 27 05:26:03 2023] GET / => generated 1461 bytes in 2 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 13)
+[pid: 153071|app: 0|req: 7/11] 127.0.0.1 () {58 vars in 1104 bytes} [Mon Nov 27 05:26:04 2023] GET / => generated 1461 bytes in 2 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 9)
+[pid: 153071|app: 0|req: 8/12] 192.168.1.4 () {40 vars in 768 bytes} [Mon Nov 27 05:31:15 2023] GET / => generated 1461 bytes in 2 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 9)
+[pid: 153071|app: 0|req: 9/13] 127.0.0.1 () {30 vars in 312 bytes} [Mon Nov 27 05:43:56 2023] GET / => generated 1461 bytes in 1 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 10)
+gateway "uWSGI http 1" has been buried (pid: 153080)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/duck/Project_Django/cs/deploy
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 6 mapped to socket 0 (127.0.0.1:8000)
+running /home/duck/Project_Django/.venv/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.23 (64bit) on [Mon Nov 27 05:44:13 2023] ***
+compiled with version: 13.2.1 20230801 on 23 November 2023 12:05:14
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+detected binary path: /home/duck/Project_Django/.venv/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55ab21155990 ***
+uWSGI http bound on 127.0.0.1:8001 fd 3
+uwsgi socket 0 inherited INET address 127.0.0.1:8000 fd 6
+Python version: 3.11.5 (main, Sep  2 2023, 14:16:33) [GCC 13.2.1 20230801]
+PEP 405 virtualenv detected: /home/duck/Project_Django/.venv/
+Set PythonHome to /home/duck/Project_Django/.venv/
+Python main interpreter initialized at 0x7f63a4188b78
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+ModuleNotFoundError: No module named 'mmcsite'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f63a4188b78 pid: 152888 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 152888)
+spawned uWSGI worker 1 (pid: 200276, cores: 30)
+spawned uWSGI worker 2 (pid: 200278, cores: 30)
+spawned uWSGI worker 3 (pid: 200295, cores: 30)
+spawned uWSGI worker 4 (pid: 200312, cores: 30)
+spawned uWSGI worker 5 (pid: 200366, cores: 30)
+spawned uWSGI http 1 (pid: 200407)
+*** Starting uWSGI 2.0.23 (64bit) on [Mon Nov 27 18:16:47 2023] ***
+compiled with version: 13.2.1 20230801 on 23 November 2023 12:05:14
+os: Linux-6.1.55-1-MANJARO #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:13:56 UTC 2023
+nodename: yzy
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/duck/Project_Django/cs/deploy
+writing pidfile to /home/duck/Project_Django/cs/deploy/uwsgi.pid
+detected binary path: /home/duck/Project_Django/.venv/bin/uwsgi
+chdir() to /home/duck/Project_Django/cs/
+your processes number limit is 44534
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** RRDtool library available at 0x55c971cf3d00 ***
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+Python version: 3.11.5 (main, Sep  2 2023, 14:16:33) [GCC 13.2.1 20230801]
+PEP 405 virtualenv detected: /home/duck/Project_Django/.venv/
+Set PythonHome to /home/duck/Project_Django/.venv/
+Python main interpreter initialized at 0x7fd893388b78
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+ModuleNotFoundError: No module named 'mmcsite'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 35 seconds on interpreter 0x7fd893388b78 pid: 9257 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9257)
+spawned uWSGI worker 1 (pid: 10892, cores: 30)
+spawned uWSGI worker 2 (pid: 10895, cores: 30)
+spawned uWSGI worker 3 (pid: 10917, cores: 30)
+spawned uWSGI worker 4 (pid: 10951, cores: 30)
+spawned uWSGI worker 5 (pid: 10975, cores: 30)
+[pid: 10892|app: 0|req: 1/1] 127.0.0.1 () {60 vars in 1135 bytes} [Mon Nov 27 10:17:22 2023] GET / => generated 1461 bytes in 2231 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 2)
+[pid: 10892|app: 0|req: 2/2] 127.0.0.1 () {58 vars in 1104 bytes} [Mon Nov 27 10:18:08 2023] GET / => generated 1461 bytes in 4 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 8)
+[pid: 10975|app: 0|req: 1/3] 127.0.0.1 () {58 vars in 1137 bytes} [Mon Nov 27 10:19:56 2023] GET /users/login/ => generated 1187 bytes in 93 msecs (HTTP/1.1 200) 8 headers in 358 bytes (1 switches on core 1)
+[pid: 10975|app: 0|req: 2/4] 127.0.0.1 () {54 vars in 1012 bytes} [Mon Nov 27 10:19:57 2023] GET /favicon.ico => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 2)
+[pid: 10975|app: 0|req: 3/5] 127.0.0.1 () {66 vars in 1328 bytes} [Mon Nov 27 10:20:00 2023] POST /users/login/ => generated 0 bytes in 283 msecs (HTTP/1.1 302) 8 headers in 252 bytes (1 switches on core 3)
+[pid: 10975|app: 0|req: 4/6] 127.0.0.1 () {60 vars in 1166 bytes} [Mon Nov 27 10:20:01 2023] GET / => generated 1461 bytes in 5 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 4)
+[pid: 10975|app: 0|req: 5/7] 127.0.0.1 () {54 vars in 1010 bytes} [Mon Nov 27 10:20:01 2023] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 5)
+[pid: 10975|app: 0|req: 6/8] 127.0.0.1 () {58 vars in 1145 bytes} [Mon Nov 27 10:20:02 2023] GET /users/home/ => generated 1591 bytes in 6 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 8)
+[pid: 10975|app: 0|req: 7/9] 127.0.0.1 () {54 vars in 1107 bytes} [Mon Nov 27 10:20:02 2023] GET /media/uploads/c9e0ba32-4cb7-4b9c-8600-f3548f62c9e6.jpg => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 10)
+[pid: 10975|app: 0|req: 8/10] 127.0.0.1 () {56 vars in 1198 bytes} [Mon Nov 27 10:20:09 2023] GET /media/uploads/c9e0ba32-4cb7-4b9c-8600-f3548f62c9e6.jpg => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 214 bytes (1 switches on core 12)
+[pid: 10975|app: 0|req: 9/11] 127.0.0.1 () {60 vars in 1176 bytes} [Mon Nov 27 10:21:04 2023] GET /users/home/ => generated 1591 bytes in 5 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 15)
+[pid: 10975|app: 0|req: 10/12] 127.0.0.1 () {58 vars in 1145 bytes} [Mon Nov 27 10:21:33 2023] GET /users/home/ => generated 1591 bytes in 4 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 14)
+[pid: 10975|app: 0|req: 11/13] 127.0.0.1 () {58 vars in 1148 bytes} [Mon Nov 27 10:40:42 2023] GET /author/ => generated 5373 bytes in 32 msecs (HTTP/1.1 200) 8 headers in 358 bytes (1 switches on core 9)
+[pid: 10892|app: 0|req: 3/14] 127.0.0.1 () {60 vars in 1176 bytes} [Mon Nov 27 10:41:31 2023] GET /users/home/ => generated 1591 bytes in 16 msecs (HTTP/1.1 200) 6 headers in 208 bytes (1 switches on core 4)
+[pid: 10975|app: 0|req: 12/15] 127.0.0.1 () {58 vars in 1148 bytes} [Mon Nov 27 10:41:32 2023] GET /author/ => generated 5373 bytes in 6 msecs (HTTP/1.1 200) 8 headers in 358 bytes (1 switches on core 19)
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
