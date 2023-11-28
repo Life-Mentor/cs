@@ -70,7 +70,8 @@ class login(View):
             if user.exists():
                 user = user.first()
                 responses = redirect(reverse('main:index'))
-                responses.set_cookie("userid",user.id)
+                userid = user.id
+                responses.set_cookie("userid",int(userid))
                 return responses
         return render(request,'users/login.html',{'form':form,'code':code})
 
