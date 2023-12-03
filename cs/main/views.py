@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.views import View
 from django.core.paginator import Paginator
 import markdown
+from django.core.cache import cache
 
 from .models import Catgory, SubmitBug as bug, Tag, User_Post, suggestion as su, Discuss
 from .form import Submitbug, User_post, suggestion as SU, discuss
