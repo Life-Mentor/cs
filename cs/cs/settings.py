@@ -9,6 +9,7 @@ AUTHENTICATION_BACKENDS = (
     'secondary.views.MyBlack',
 )
 INSTALLED_APPS = [
+    'daphne', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -16,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'chat.apps.ChatConfig',
     'main.apps.MainConfig',
     'secondary.apps.SecondaryConfig',
     'mdeditor',
@@ -49,6 +51,7 @@ TEMPLATES = [
     },
 ]
 WSGI_APPLICATION = 'cs.wsgi.application'
+ASGI_APPLICATION = 'cs.asgi.application'
 
 # DATABASES = { 'default': { 'ENGINE': 'django.db.backends.mysql', 'NAME': 'cs', 'USER': 'root', 'PASSWORD': 'qpal', 'HOST': '127.0.0.1', 'PORT': 3306, } }
 DATABASES = { 'default': { 'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3', } }
@@ -92,3 +95,12 @@ EMAIL_HOST_USER = "959735909@qq.com"    # 自己的邮箱地址
 EMAIL_HOST_PASSWORD = "xxxxxxx"       # 自己的邮箱密码
 EMAIL_PORT = 25
 EMAIL_USE_SSL = True
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": ["redis://:qpal@127.0.0.1:6379/"],
+        },
+    },
+}
