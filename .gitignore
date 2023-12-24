@@ -2,3 +2,4 @@ git_token.txt
 db.sqlite3
 ./deploy/*
 ./cs/cs/settings.py
+./cs/media/uploads/*
