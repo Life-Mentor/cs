@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main', '0004_submitbug_delete_blog'),
+        ("main", "0004_submitbug_delete_blog"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='submitbug',
-            name='username',
+            model_name="submitbug",
+            name="username",
         ),
         migrations.AddField(
-            model_name='submitbug',
-            name='submitname',
-            field=models.CharField(default='匿名用户', max_length=32, verbose_name='用户名字'),
+            model_name="submitbug",
+            name="submitname",
+            field=models.CharField(default="匿名用户", max_length=32, verbose_name="用户名字"),
         ),
     ]

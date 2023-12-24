@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -15,19 +14,52 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='UserInfo',
+            name="UserInfo",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=32, verbose_name='昵称')),
-                ('user_info', models.CharField(blank=True, default='', max_length=100, verbose_name='个人简介')),
-                ('gexing', models.CharField(blank=True, default='', max_length=100, verbose_name='个性签名')),
-                ('gender', models.CharField(choices=[('male', '男'), ('female', '女')], default='male', max_length=6, verbose_name='性别')),
-                ('icon', models.CharField(max_length=255, verbose_name='用户头像')),
-                ('owner', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='账号')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=32, verbose_name="昵称")),
+                (
+                    "user_info",
+                    models.CharField(
+                        blank=True, default="", max_length=100, verbose_name="个人简介"
+                    ),
+                ),
+                (
+                    "gexing",
+                    models.CharField(
+                        blank=True, default="", max_length=100, verbose_name="个性签名"
+                    ),
+                ),
+                (
+                    "gender",
+                    models.CharField(
+                        choices=[("male", "男"), ("female", "女")],
+                        default="male",
+                        max_length=6,
+                        verbose_name="性别",
+                    ),
+                ),
+                ("icon", models.CharField(max_length=255, verbose_name="用户头像")),
+                (
+                    "owner",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="账号",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': '用户数据',
-                'verbose_name_plural': '用户数据',
+                "verbose_name": "用户数据",
+                "verbose_name_plural": "用户数据",
             },
         ),
     ]

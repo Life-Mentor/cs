@@ -4,18 +4,30 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main', '0009_remove_user_post_add_data_remove_user_post_pub_data_and_more'),
+        ("main", "0009_remove_user_post_add_data_remove_user_post_pub_data_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='suggestion',
+            name="suggestion",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('su_name', models.CharField(default='匿名用户', max_length=32, verbose_name='用户名称')),
-                ('su_desc', models.TextField(max_length=256, verbose_name='具体建议')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "su_name",
+                    models.CharField(
+                        default="匿名用户", max_length=32, verbose_name="用户名称"
+                    ),
+                ),
+                ("su_desc", models.TextField(max_length=256, verbose_name="具体建议")),
             ],
         ),
     ]

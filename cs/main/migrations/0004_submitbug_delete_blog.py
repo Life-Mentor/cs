@@ -5,23 +5,37 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('secondary', '0005_alter_user_info_name'),
-        ('main', '0003_blog_delete_user_post'),
+        ("secondary", "0005_alter_user_info_name"),
+        ("main", "0003_blog_delete_user_post"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='SubmitBug',
+            name="SubmitBug",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('Bug_name', models.CharField(max_length=56, verbose_name='bug名字')),
-                ('Bug_desc', models.CharField(max_length=256, verbose_name='bug描述')),
-                ('username', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='secondary.user_info', verbose_name='用户名字')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("Bug_name", models.CharField(max_length=56, verbose_name="bug名字")),
+                ("Bug_desc", models.CharField(max_length=256, verbose_name="bug描述")),
+                (
+                    "username",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="secondary.user_info",
+                        verbose_name="用户名字",
+                    ),
+                ),
             ],
         ),
         migrations.DeleteModel(
-            name='Blog',
+            name="Blog",
         ),
     ]

@@ -5,19 +5,33 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('secondary', '0005_alter_user_info_name'),
-        ('main', '0011_suggestion_su_title'),
+        ("secondary", "0005_alter_user_info_name"),
+        ("main", "0011_suggestion_su_title"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Discuss',
+            name="Discuss",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('desc', models.CharField(max_length=256, verbose_name='评论')),
-                ('name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='secondary.user_info', verbose_name='用户')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("desc", models.CharField(max_length=256, verbose_name="评论")),
+                (
+                    "name",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="secondary.user_info",
+                        verbose_name="用户",
+                    ),
+                ),
             ],
         ),
     ]

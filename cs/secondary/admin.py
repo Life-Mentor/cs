@@ -16,14 +16,17 @@ class UserProfileAdmin(UserAdmin):
 admin.site.register(User, UserProfileAdmin)
 """
 
+
 class UserProfileAdmin(admin.ModelAdmin):
     model = User_Info
-admin.site.register(User_Info,UserProfileAdmin)
+
+
+admin.site.register(User_Info, UserProfileAdmin)
+
 
 @admin.register(EmailVerifyRecord)
 class Admin(admin.ModelAdmin):
-    list_display = ('code',)
-
+    list_display = ("code",)
 
 
 # Register your models here.

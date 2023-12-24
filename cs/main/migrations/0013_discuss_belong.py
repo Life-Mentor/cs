@@ -5,16 +5,20 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main', '0012_discuss'),
+        ("main", "0012_discuss"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='discuss',
-            name='belong',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='main.user_post', verbose_name='所属文章'),
+            model_name="discuss",
+            name="belong",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="main.user_post",
+                verbose_name="所属文章",
+            ),
             preserve_default=False,
         ),
     ]

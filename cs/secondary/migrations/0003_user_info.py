@@ -4,28 +4,57 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('secondary', '0002_emailverifyrecord'),
+        ("secondary", "0002_emailverifyrecord"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='User_Info',
+            name="User_Info",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=32)),
-                ('password', models.CharField(max_length=256)),
-                ('email', models.CharField(max_length=52, verbose_name='邮箱')),
-                ('user_info', models.CharField(blank=True, default='', max_length=522, null=True, verbose_name='个性签名')),
-                ('gender', models.CharField(choices=[('male', '男'), ('female', '女')], default='male', max_length=6, verbose_name='性别')),
-                ('gexing', models.CharField(blank=True, default='', max_length=100, verbose_name='个性签名')),
-                ('xieyi', models.CharField(max_length=5, verbose_name='协议')),
-                ('icon', models.CharField(max_length=255, verbose_name='用户头像')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=32)),
+                ("password", models.CharField(max_length=256)),
+                ("email", models.CharField(max_length=52, verbose_name="邮箱")),
+                (
+                    "user_info",
+                    models.CharField(
+                        blank=True,
+                        default="",
+                        max_length=522,
+                        null=True,
+                        verbose_name="个性签名",
+                    ),
+                ),
+                (
+                    "gender",
+                    models.CharField(
+                        choices=[("male", "男"), ("female", "女")],
+                        default="male",
+                        max_length=6,
+                        verbose_name="性别",
+                    ),
+                ),
+                (
+                    "gexing",
+                    models.CharField(
+                        blank=True, default="", max_length=100, verbose_name="个性签名"
+                    ),
+                ),
+                ("xieyi", models.CharField(max_length=5, verbose_name="协议")),
+                ("icon", models.CharField(max_length=255, verbose_name="用户头像")),
             ],
             options={
-                'verbose_name': '用户数据',
-                'verbose_name_plural': '用户数据',
+                "verbose_name": "用户数据",
+                "verbose_name_plural": "用户数据",
             },
         ),
     ]

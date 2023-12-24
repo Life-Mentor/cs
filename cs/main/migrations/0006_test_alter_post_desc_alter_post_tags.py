@@ -6,27 +6,45 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main', '0005_remove_submitbug_username_submitbug_submitname'),
+        ("main", "0005_remove_submitbug_username_submitbug_submitname"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='test',
+            name="test",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('content', ckeditor_uploader.fields.RichTextUploadingField(default='', verbose_name='正文内容')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "content",
+                    ckeditor_uploader.fields.RichTextUploadingField(
+                        default="", verbose_name="正文内容"
+                    ),
+                ),
             ],
         ),
         migrations.AlterField(
-            model_name='post',
-            name='desc',
-            field=models.TextField(blank=True, default='', max_length=200, verbose_name='文章内容'),
+            model_name="post",
+            name="desc",
+            field=models.TextField(
+                blank=True, default="", max_length=200, verbose_name="文章内容"
+            ),
         ),
         migrations.AlterField(
-            model_name='post',
-            name='tags',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.tag', verbose_name='文章标签'),
+            model_name="post",
+            name="tags",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                to="main.tag",
+                verbose_name="文章标签",
+            ),
         ),
     ]

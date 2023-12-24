@@ -4,19 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('secondary', '0003_user_info'),
+        ("secondary", "0003_user_info"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='user_info',
-            name='gender',
+            model_name="user_info",
+            name="gender",
         ),
         migrations.AlterField(
-            model_name='userinfo',
-            name='gender',
-            field=models.CharField(choices=[('male', '男'), ('female', '女')], default='baomi', max_length=6, verbose_name='性别'),
+            model_name="userinfo",
+            name="gender",
+            field=models.CharField(
+                choices=[("male", "男"), ("female", "女")],
+                default="baomi",
+                max_length=6,
+                verbose_name="性别",
+            ),
         ),
     ]

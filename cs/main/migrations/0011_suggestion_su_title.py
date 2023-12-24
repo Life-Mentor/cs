@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main', '0010_suggestion'),
+        ("main", "0010_suggestion"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='suggestion',
-            name='su_title',
-            field=models.CharField(default=' ', max_length=32, verbose_name='建议标题'),
+            model_name="suggestion",
+            name="su_title",
+            field=models.CharField(default=" ", max_length=32, verbose_name="建议标题"),
         ),
     ]
