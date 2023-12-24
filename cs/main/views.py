@@ -11,9 +11,10 @@ from secondary.models import User_Info
 
 
 def logout(requests):
-    responses = redirect(reverse("main:index"))
-    responses.delete_cookie("userid")
-    return responses
+    # responses = redirect(reverse("main:index"))
+    # responses.delete_cookie("userid")
+    requests.session.delete()
+    return redirect(reverse("main:index"))
 
 
 class index(View):
@@ -43,7 +44,7 @@ class overall(View):
 class check(View):
     def get(self, requests, detailed_id):
         form = discuss()
-        users = requests.COOKIES.get("userid")
+        users = requests.session.get("userid")
         if users != 0 and users is not None:
             user = User_Info.objects.get(id=users)
         else:
@@ -88,7 +89,7 @@ class check(View):
     def post(self, requests, detailed_id):
         form = discuss(requests.POST)
         if form.is_valid():
-            users = requests.COOKIES.get("userid")
+            users = requests.session.get("userid")
             if users != 0 and users is not None:
                 user = User_Info.objects.get(id=users)
             else:
@@ -125,7 +126,7 @@ class check(View):
                 )
                 author = post.owner.name
                 title = post.title
-                users = requests.COOKIES.get("userid")
+                users = requests.session.get("userid")
                 if users != 0:
                     user = User_Info.objects.get(id=users)
                 else:
@@ -174,7 +175,7 @@ class author(View):
         if form.is_valid():
             content = form.cleaned_data.get("content")
             title = form.cleaned_data.get("title")
-            author_user = requests.COOKIES.get("userid")
+            author_user = requests.session.get("userid")
             userpost = User_Post()
             c = form.cleaned_data.get("catgory")
             catgory = Catgory.objects.get(name=c)
@@ -206,7 +207,7 @@ class author(View):
 
 class my_article(View):
     def get(self, requests):
-        userid = requests.COOKIES.get("userid")
+        userid = requests.session.get("userid")
         users = User_Info.objects.get(id=userid)
         if users:
             post_list = User_Post.objects.filter(owner=users.id)

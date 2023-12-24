@@ -76,10 +76,11 @@ class login(View):
             user = User_Info.objects.filter(name=username, password=password)
             if user.exists():
                 user = user.first()
-                responses = redirect(reverse("main:index"))
                 userid = user.id
-                responses.set_cookie("userid", int(userid))
-                return responses
+                request.session["userid"] = int(userid)
+                # responses = redirect(reverse("main:index"))
+                # responses.set_cookie("userid", int(userid))
+                return redirect(reverse("main:index"))
         return render(request, "users/login.html", {"form": form, "code": code})
 
 
@@ -100,7 +101,7 @@ def active_user(request, active_code):
 
 
 def home(request):
-    userid = request.COOKIES.get("userid", 0)
+    userid = request.session.get("userid", 0)
     if userid != 0:
         user = User_Info.objects.filter(id=userid).first()
         return render(request, "users/home.html", {"user": user})
